@@ -607,7 +607,7 @@ class BaseClient
             $retries,
             RequestInterface $request,
             ?ResponseInterface $response = null,
-            ?RequestException $exception = null
+            RequestException|GuzzleConnectException|null $exception = null
         ) {
             return $this->respectRateLimits
                 && $response
